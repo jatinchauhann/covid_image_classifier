@@ -1,8 +1,8 @@
 # AUTHOR: JATIN CHAUHAN
 
 from flask import Flask, render_template, request, url_for, flash, redirect
-# import IC
-from werkzeug.exceptions import abort
+from util import base64_to_pil
+import IC
 
 app = Flask(__name__)
 
@@ -17,13 +17,35 @@ def application():
     return render_template('app.html')
 
 
+@app.route('/appbeta')
+def application():
+    return render_template('appbeta.html')
+
+
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    if request.method == 'POST':
+        # Get the image from post request
+        img = base64_to_pil(request.json)
+
+        # Save the image to ./uploads
+        img.save("./uploads/image.png")
+
+        IMAGE_PATH = "./uploads/image.png"
+        result = IC.function_pred_grad_cam(IMAGE_PATH)
+
+        if result == 'DONE':
+            return render_template('index.html')
+
+    return None
+
 @app.route('/generate/<path>')
 def generate_report(path):
-    # IMAGE_PATH = "2237.png"
-    # result = IC.function_pred_grad_cam(IMAGE_PATH)
-    #
-    # if result == 'DONE':
-    #     return render_template('result.html')
+    IMAGE_PATH = "2237.png"
+    result = IC.function_pred_grad_cam(IMAGE_PATH)
+
+    if result == 'DONE':
+        return render_template('result.html')
     return render_template('app.html')
 
 
