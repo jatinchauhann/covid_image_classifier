@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Result - ZS Covid Image Processing</title>
+	<meta name="description" content="front-end developer">
+	<meta name="author" content="Jatin Chauhan">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/vendor.min.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+
+   <!-- script
+   ================================================== -->
+	<script src="{{ url_for('static', filename= 'js/modernizr.js') }}"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename= 'images/favicon.png') }}" >
+
+</head>
+
+<body>
+
+	<!-- header
+   ================================================== -->
+   <header id="main-header">
+
+   	<div class="row">
+
+	      <div class="logo">
+	         <a href="{{ url_for('index') }}">ZS Covid Image Processing</a>
+	      </div>
+
+	      <nav id="nav-wrap">
+
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-icon">Menu</span>
+            </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-icon">Menu</span>
+         	</a>
+
+	         <ul id="nav" class="nav">
+	            <li><a  href="{{ url_for('index') }}">Home.</a></li>
+	         </ul> <!-- end #nav -->
+
+	      </nav> <!-- end #nav-wrap -->
+
+	   </div>
+
+   </header> <!-- end header -->
+
+   <section id="contact">
+
+    <div class="row section-head">
+
+        <div class="twelve columns">
+
+          <h1>COVID Image Classifier<span>.</span></h1>
+
+          <hr />
+
+       </div>
+
+   </div> <!-- end section-head -->
+
+   <div class="row">
+
+       <div class="six columns tab-whole left">
+
+        <img id="input-image" src="{{ url_for('static', filename='images/input.png') }}" alt="" width="100%">
+
+        <button class="submitform" name="submitcontact">Upload Image</button>
+        <button class="submitform" name="submitcontact">Run Model</button>
+
+      </div>
+
+      <div class="six columns tab-whole right">
+        <h2>STATS</h2>
+        <ul>
+            <li><h6>Accuracy : xx%</h6></li>
+            <li><h6>Precision : yy%</h6></li>
+            <li><h6>Recall : zz%</h6></li>
+            <li><h6>F1 Score – aa%</h6></li>
+        </ul>
+
+        <h4>Model learns with every image</h4>
+
+      </div>
+
+   </div> <!-- end row -->
+
+</section>  <!-- end contact -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <ul class="copyright">
+         	<li>&copy; Copyright 2020 ZS.</li>
+         </ul>
+
+      </div> <!-- end row -->
+
+   </footer> <!-- end footer -->
+
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="{{ url_for('static', filename= 'js/jquery-1.11.3.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery-migrate-1.2.1.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.flexslider-min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.waypoints.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.validate.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.fittext.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.placeholder.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.magnific-popup.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>ZS Covid Image Processing</title>
+	<meta name="description" content="front-end developer">
+	<meta name="author" content="Jatin Chauhan">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+ 	<!-- CSS
+   ================================================== -->
+
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/vendor.min.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+
+   <!-- script
+   ================================================== -->
+	<script src="{{ url_for('static', filename= 'js/modernizr.js') }}"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename= 'images/favicon.png') }}" >
+
+</head>
+
+<body>
+
+	<!-- header
+   ================================================== -->
+   <header id="main-header">
+
+   	<div class="row">
+
+	      <div class="logo">
+	         <a href="{{ url_for('index') }}">ZS Covid Image Processing</a>
+	      </div>
+
+	      <nav id="nav-wrap">
+
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-icon">Menu</span>
+            </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-icon">Menu</span>
+         	</a>
+
+	         <ul id="nav" class="nav">
+	            <li><a class="smoothscroll" href="#hero">Home.</a></li>
+		        <li class="current"><a class="smoothscroll" href="#about">Objective.</a></li>
+	            <li><a class="smoothscroll" href="#services">Vision.</a></li>
+	            <li><a class="smoothscroll" href="#testimonials">Team.</a></li>
+				<li><a class="smoothscroll" href="#contact">Contact.</a></li>
+				<li><a href="{{ url_for('application') }}">App.</a></li>
+	         </ul> <!-- end #nav -->
+
+	      </nav> <!-- end #nav-wrap -->
+
+	   </div>
+
+   </header> <!-- end header -->
+
+   <!-- homepage hero
+   ================================================== -->
+   <section id="hero">
+
+		<div class="row hero-content">
+
+			<div class="twelve columns hero-container">
+
+			   <!-- hero-slider start-->
+			   <div id="hero-slider" class="flexslider">
+
+				   <ul class="slides">
+
+					   <!-- slide -->
+					   <li>
+						   <div class="flex-caption">
+								<h1 class=""><a class="smoothscroll" href="#about" title="about" >Medical Imaging</a> in RWD
+								</h1>
+
+								<h3 class="">
+								    Leveraging advancement in AI and real world data (RWD) sources, including biomedical imaging to enable early diagnosis of life-threatening conditions.
+								</h3>
+							</div>
+					   </li>
+
+
+
+				   </ul>
+
+			   </div> <!-- end hero-slider -->
+
+	      </div> <!-- end twelve columns-->
+
+		</div> <!-- end row -->
+
+		<div id="more">
+		      <a href="{{ url_for('application') }}">Go to the App<i class="fa fa-angle-right"></i></a>
+		</div>
+
+   </section> <!-- end homepage hero -->
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+   	<div class="row section-head">
+
+      	<div class="twelve columns">
+
+      		<h1>OBJECTIVE<span>.</span></h1>
+
+	         <hr />
+
+	         <p></p>
+
+	      </div> <!-- end section-head -->
+
+      </div>
+
+      <div class="row mobile-no-padding">
+
+      	<div class="process bgrid-half tab-bgrid-whole group">
+
+      		<div class="bgrid">
+
+			      <h3>AI.</h3>
+
+			      <p>Leverage an AI based model with high accuracy of identifying COVID-19 using Imaging data.
+			      </p>
+
+		   	</div>
+
+      		<div class="bgrid">
+
+			     	<h3>FRAMEWORK.</h3>
+
+			     	<p>Develop a framework for using similar techniques to quickly train models for other disease areas.
+			   	</p>
+
+		      </div>
+
+      	</div> <!-- end process -->
+
+     	</div> <!-- end row -->
+
+   </section> <!-- end about -->
+
+    <!-- Skills Section
+   ================================================== -->
+   <section id="services">
+
+   	<div class="row section-head">
+
+      	<div class="twelve columns">
+
+      		<h1>VISION<span>.</span></h1>
+
+	         <hr />
+
+	         <p>
+	         </p>
+
+	      </div>
+
+      </div> <!-- end section-head -->
+
+      <div class="row mobile-no-padding">
+
+	      <div class="service-list bgrid-third s-bgrid-half tab-bgrid-whole group">
+
+	      	<div class="bgrid">
+
+	            <h3>EXISTING ASSET ON COVID PATIENT CLASSIFICATION.</h3>
+
+	            <div class="service-content">
+
+                    <ul>
+
+						<li>ZS has been developing a binary classification model to identify COVID-19 positive patients using lung CT images</li>
+						<li>The latest model was trained on ~540 CT images belonging to two categories namely, COVID-19 positive & negative</li>
+						<li>The model has F-1 Score of 87.3%, AUC of 93.1% and Accuracy of 87.7%, as evaluated on ~200 test images</li>
+						<li>The model is up to the mark when compared to radiologists1 performance both in terms of sensitivity & specificity</li>
+						<li>This model was submitted in a biomedical imaging grand challenge1, ranking 8/328 global participants</li>
+						<li>The model is currently available in the form of pickled object and one needs to understand specific coding frameworks to be able to use the model</li>
+		            </ul>
+
+	         	</div>
+
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+
+	            <h3>CREATING CAPABILITIES.</h3>
+
+	            <div class="service-content">
+		            <ul>
+		                <li>During the hackathon, we will be scaling the imaging AI capability of ZS, by building out a COVID-19 patient identification API</li>
+		                <li>COVID-19 Classification API
+
+							<ul>
+								<li>Assess user requirements</li>
+								<li>Design UI to display required features</li>
+								<li>Enable user to upload CT images</li>
+								<li>Display Prediction</li>
+								<li>Display Grad-CAM2 image, etc.</li>
+
+								<li>Write a back-end code to implement the functions of required features</li>
+								<li>Link the COVID-19 classification model pipeline to the UI, to ingest, preprocess & predict uploaded images</li>
+
+							</ul>
+
+						</li>
+
+		            </ul>
+	            </div>
+
+			   </div> <!-- end bgrid -->
+
+			   <div class="bgrid">
+
+	            <h3>PLAN TO SCALE.</h3>
+
+	            <div class="service-content">
+		            <ul>
+		                 <li>COVID-19 Classification API
+							<ul>
+								<li>We plan to build an interactive UI where the users (radiologists, clinical teams, etc.) can upload the lung CT images & get real-time predictions
+								</li>
+							</ul>
+
+						 </li>
+						 <li>Image Classification Platform
+							<ul>
+								<li>This will be an extension of Phase-I where the users will be able to train their own image classification AI models across disease areas
+								</li>
+							</ul>
+
+						 </li>
+						 <li>Imaging AI solution
+							<ul>
+								<li>This will be an extension of Phase-II where capability will also include the model training for multi-class classification, image segmentation, disease progression, etc.
+								</li>
+							</ul>
+
+						 </li>
+
+		            </ul>
+	            </div>
+
+			   </div> <!-- end bgrid -->
+
+				<div class="bgrid">
+       </div> <!-- end service-list -->
+
+      </div> <!-- end row -->
+
+   </section> <!-- end services -->
+
+
+
+   <!-- Testimonials Section
+   ================================================== ---->
+   <section id="testimonials">
+
+      <div class="row content flex-container">
+
+         <div id="testimonial-slider" class="flexslider">
+
+            <ul class="slides">
+               <li>
+                  <h3>Manu has 9+ years of consulting and analytics experience in the life sciences industry. Manu’s work has spanned a variety of business issues including strategy and design, program analytics and patient insights. Manu uses his expertise in a number of research methodologies (data driven/qualitative/quantitative) and across therapeutic areas to help clients make informed decisions. Manu holds a B.tech in Industrial Engineering and Management from National Institute of Technology, India.
+				  </h3>
+                  <div class="testimonial-author">
+                    	<img src="{{ url_for('static', filename= 'images/team/manu.png')}}" alt="Author image">
+                    	<div class="author-info">
+                    		Manu Garg
+                    		<span class="position"></span>
+                    	</div>
+                  </div>
+             	</li> <!-- end slide ---->
+
+				 <li>
+					<h3>Abhinav has 4+ years of experience in solving descriptive, predictive and prescriptive problems for healthcare industry. He has worked primarily in customer centric marketing and R&D domain, to help clients make informed decision using data science and domain expertise. He has collaborated with AstraZeneca & Gilead R&D on asset development and innovation-based projects. Recent engagements include site optimization, medical evidence generation using RWD & ML/ AI techniques, biomedical imaging analytics etc.. Abhinav holds a Bachelor’s in Mechanical Engineering (India) and Master’s in Business Analytics (US)
+					</h3>
+					<div class="testimonial-author">
+						  <img src="{{ url_for('static', filename= 'images/team/abhinav.png')}}" alt="Author image">
+						  <div class="author-info">
+							  Abhinav Bansal
+							  <span class="position"></span>
+						  </div>
+					</div>
+				   </li> <!-- end slide ---->
+
+
+				   <li>
+					<h3>Dhaval has 12+ years of combined consulting and industry experience in Real World Data and Analytics, primarily in the life sciences industry. Dhaval’s work includes generating RWE and leveraging RWD capabilities for informed business decision making. Dhaval helps clients with the application of RWD and research methodologies to meet their business needs. Dhaval holds a Master's degree in Information Systems from Central Queensland University, Australia and a Bachelor's degree in Computer Science from Dharmsinh Desai University, India. 
+					</h3>
+					<div class="testimonial-author">
+						  <img src="{{ url_for('static', filename= 'images/team/dhaval.jpg')}}" alt="Author image">
+						  <div class="author-info">
+							  Dhaval Patel
+							  <span class="position"></span>
+						  </div>
+					</div>
+				   </li> <!-- end slide ---->
+
+
+				   <li>
+					<h3>Rodney has over 20 years' experience in algorithm development in support of R&D pre-clinical translational imaging, pre-clinical protocol design, predicting analytics and applying deep learning algorithms and workflows across provider, payor, diagnostic and industry contexts. He has developed deep learning algorithms for disease classification in NSCLC and pediatric fracture detection and in prediction of type 2 diabetes using dietary factors using RWD. He has developed algorithms for R&D trial validation of peptide technology across the blood brain barrier for therapeutic targeting of HER2+ brain metastasis and gliomas
+					</h3>
+					<div class="testimonial-author">
+						  <img src="{{ url_for('static', filename= 'images/team/rodney.png')}}" alt="Author image">
+						  <div class="author-info">
+							  Rodney Sappington
+							  <span class="position"></span>
+						  </div>
+					</div>
+				   </li> <!-- end slide ---->
+
+
+
+
+				   <li>
+					<h3>Shubhankar is an associate in the Real World Evidence practice. He has worked on a wide range of projects harnessing the synergies between RWD, data science and applied machine learning. His projects include disease prediction, clinical trial optimization, real world insights generation for chronic rare diseases to support drug life cycle management. He is currently working on developing an Artificial Intelligence strategy to predict COVID-19 positive patients using their CT scans. Shubhankar holds an M.S. in Business Analytics from the University of Texas at Dallas. 
+
+					</h3>
+					<div class="testimonial-author">
+						  <img src="{{ url_for('static', filename= 'images/team/shub.jpg')}}" alt="Author image">
+						  <div class="author-info">
+							Shubhankar Thakar
+
+							  <span class="position"></span>
+						  </div>
+					</div>
+				   </li> <!-- end slide ---->
+
+				   <li>
+					  <h3>Chandrakant is a Data Science Consultant, with Real World Data & Insights (RWD&I) Venture team, based out of ZS Bangalore office. He has over 5 years of experience with consulting and life sciences industry, during his tenure at ZS he has worked with multiple Pharma clients across different therapy areas. He has deep expertise in Patient Journey, Segmentation, Market mix, targeting, patient identification etc. Chandrakant holds a bachelor’s in electrical engineering from VIT University, Vellore.
+					  </h3>
+					  <div class="testimonial-author">
+							<img src="{{ url_for('static', filename= 'images/team/chand.png')}}" alt="Author image">
+							<div class="author-info">
+								Chandrakant Sharma
+
+								<span class="position"></span>
+							</div>
+					  </div>
+					 </li> <!-- end slide ---->
+
+
+					 <li>
+					  <h3>Shradhit is a Data Science Associate, based out of New York City office. He has worked on building solutions using Natual Language Processing, Data Science, Machine Learning and Computer Vision for ZS's various Pharma Clients. Shradhit, in the last Image Classification competition was in the top 10 among 328 participants. He holds M.S in Data Analytics / Science – from Rutgers University and B.Tech in Computer Science from College of Engineering, Pune.
+					  </h3>
+					  <div class="testimonial-author">
+							<img src="{{ url_for('static', filename= 'images/team/shradhit.png')}}" alt="Author image">
+							<div class="author-info">
+								Shradhit Subudhi
+
+								<span class="position"></span>
+							</div>
+					  </div>
+					 </li> <!-- end slide ---->
+
+
+					 <li>
+					  <h3>Akshat has been with ZS for the past two years based out of Princeton office. He has been working on building solutions in the telecommunication and pharma domain. During his time in ZS, Akshat has been helping clients to solve business problems like tracing customer’s journey to identify happy and unhappy customers using sequence analysis. He is a part of the AI COE team and has worked on multiple research projects using Computer Vision to solve medical imaging problems.
+						In addition, Akshat has participated in data science challenges and has been in the top 5% 
+					  </h3>
+					  <div class="testimonial-author">
+							<img src="{{ url_for('static', filename= 'images/team/akshat.png')}}" alt="Author image">
+							<div class="author-info">
+								Akshat Shreemali
+
+								<span class="position"></span>
+							</div>
+					  </div>
+					 </li> <!-- end slide ---->
+
+
+
+            </ul> <!-- end slides ---->
+
+         </div> <!-- end flexslider  -->
+
+	  </div> <!-- end row ---->
+
+
+   </section> <!-- end testimonials section -->
+
+
+   <!-- contact
+   ================================================== -->
+   <section id="contact">
+
+   	<div class="row section-head">
+
+   		<div class="twelve columns" style="display: flex; justify-content: center;">
+
+	         <h1>Get In Touch With Us<span>.</span></h1>
+
+	      </div>
+
+      </div> <!-- end section-head -->
+
+      <div class="row" style="display: flex; justify-content: center;">
+
+      	<div id="contact-form" class="six columns tab-whole">
+
+            <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action="sendEmail.php"  >
+      			<fieldset>
+
+                  <div class="group">
+ 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minLength="2" required />
+                  </div>
+                  <div>
+	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required />
+	               </div>
+                  <div>
+	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject"  value="" />
+	               </div>
+                  <div>
+	                 	<textarea name="contactMessage"  id="contactMessage" placeholder="message" rows="10" cols="50" required ></textarea>
+	               </div>
+                  <div>
+                     <button class="submitform" name="submitcontact">Submit</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>
+       				      <div class="s-loader">
+								  	<div class="bounce1"></div>
+								  	<div class="bounce2"></div>
+								  	<div class="bounce3"></div>
+								</div>
+							</div>
+                  </div>
+
+      			</fieldset>
+      		</form> <!-- Form End -->
+
+            <!-- contact-warning -->
+            <div id="message-warning"></div>
+            <!-- contact-success -->
+      		<div id="message-success">
+               <i class="icon-ok"></i>Your message was sent, thank you!<br />
+      		</div>
+
+         </div>
+
+      </div> <!-- end row -->
+
+   </section>  <!-- end contact -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+		<!--
+      	<div class="twelve columns content group">
+
+				<ul class="social-links">
+               <li><a href="https://www.github.com/jatinchauhann"><i class="fa fa-git-square"></i></a></li>
+               <li><a href="https://www.instagram.com/jatinchauhann/"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+
+            <hr />
+
+            <div class="info">
+
+            	<div class="footer-logo"></div>
+
+	            <p><i>Ideation without execution is delusion<span>.</span></i>
+	            </p>
+
+	         </div>
+
+      	</div>    -->
+
+         <ul class="copyright">
+         	<li>&copy; Copyright 2020 ZS.</li>
+         </ul>
+
+         <div id="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
+         </div>
+
+      </div> <!-- end row -->
+
+   </footer> <!-- end footer -->
+
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+
+
+   <script src="{{ url_for('static', filename= 'js/jquery-1.11.3.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery-migrate-1.2.1.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.flexslider-min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.waypoints.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.validate.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.fittext.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.placeholder.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/jquery.magnific-popup.min.js') }}"></script>
+   <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+
+</body>
+
+</html>
