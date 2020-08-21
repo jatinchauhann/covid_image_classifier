@@ -34,10 +34,13 @@ function fileSelectHandler(e) {
 
 var imagePreview = document.getElementById("image-preview");
 var imageDisplay = document.getElementById("image-display");
+var imageDisplayOutput = document.getElementById("image-display-output");
 var uploadCaption = document.getElementById("upload-caption");
 var predResult = document.getElementById("pred-result");
 var loader = document.getElementById("loader");
 
+
+hide(imageDisplayOutput)
 //========================================================================
 // Main button events
 //========================================================================
@@ -94,6 +97,7 @@ function previewFile(file) {
     imageDisplay.classList.remove("loading");
 
     displayImage(reader.result, "image-display");
+    show(imageDisplayOutput);
   };
 }
 
@@ -112,27 +116,7 @@ function predictImage(image) {
     .then(resp => {
       if (resp.ok)
         resp.json().then(data => {
-          // displayResult(data);
-
-          var file = new File("output.png");
-          var fileName = encodeURI('output.png');
-
-          var reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onloadend = () => {
-            imagePreview.src = URL.createObjectURL(file);
-
-            show(imagePreview);
-            hide(uploadCaption);
-
-            // reset
-            predResult.innerHTML = "";
-            imageDisplay.classList.remove("loading");
-
-            displayImage(reader.result, "image-display");
-          };
-
-
+          displayResult(data);
         });
     })
     .catch(err => {
@@ -140,6 +124,7 @@ function predictImage(image) {
       window.alert("Oops! Something went wrong.");
     });
 }
+
 
 function displayImage(image, id) {
   // display image on given id <img> element
