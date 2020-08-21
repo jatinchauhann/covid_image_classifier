@@ -40,7 +40,6 @@ var predResult = document.getElementById("pred-result");
 var loader = document.getElementById("loader");
 
 
-hide(imageDisplayOutput)
 //========================================================================
 // Main button events
 //========================================================================
@@ -97,6 +96,8 @@ function previewFile(file) {
     imageDisplay.classList.remove("loading");
 
     displayImage(reader.result, "image-display");
+    let ImgSrc = imageDisplayOutput.src
+    imageDisplayOutput.src = ImgSrc.replace("input", "output");
     show(imageDisplayOutput);
   };
 }
