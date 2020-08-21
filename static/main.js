@@ -57,7 +57,7 @@ function submitImage() {
 
   // call the predict function of the backend
   predictImage(imageDisplay.src);
-  show(linkoutput);
+  //show(linkoutput);
 }
 
 function clearImage() {
