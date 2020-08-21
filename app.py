@@ -31,7 +31,7 @@ def predict():
         # Save the image to ./uploads
         img.save("image.png")
 
-        IMAGE_PATH = "./uploads/image.png"
+        IMAGE_PATH = "image.png"
         result = IC.function_pred_grad_cam(IMAGE_PATH)
 
         if result == 'DONE':
