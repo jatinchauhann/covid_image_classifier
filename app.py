@@ -29,7 +29,7 @@ def predict():
         img = base64_to_pil(request.json)
 
         # Save the image to ./uploads
-        img.save("./uploads/image.png")
+        img.save("image.png")
 
         IMAGE_PATH = "./uploads/image.png"
         result = IC.function_pred_grad_cam(IMAGE_PATH)
