@@ -18,7 +18,7 @@ def application():
 
 
 @app.route('/appbeta')
-def application():
+def applicationbeta():
     return render_template('appbeta.html')
 
 
