@@ -37,6 +37,7 @@ var imageDisplay = document.getElementById("image-display");
 var uploadCaption = document.getElementById("upload-caption");
 var predResult = document.getElementById("pred-result");
 var loader = document.getElementById("loader");
+var linkoutput = document.getElementById("link-to-output");
 
 //========================================================================
 // Main button events
@@ -72,6 +73,7 @@ function clearImage() {
   hide(loader);
   hide(predResult);
   show(uploadCaption);
+  hide(linkoutput);
 
   imageDisplay.classList.remove("loading");
 }
@@ -113,6 +115,7 @@ function predictImage(image) {
       if (resp.ok)
         resp.json().then(data => {
           displayResult(data);
+          show(linkoutput);
         });
     })
     .catch(err => {
