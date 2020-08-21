@@ -34,11 +34,9 @@ function fileSelectHandler(e) {
 
 var imagePreview = document.getElementById("image-preview");
 var imageDisplay = document.getElementById("image-display");
-var imageDisplayOutput = document.getElementById("image-display-output");
 var uploadCaption = document.getElementById("upload-caption");
 var predResult = document.getElementById("pred-result");
 var loader = document.getElementById("loader");
-
 
 //========================================================================
 // Main button events
@@ -96,9 +94,6 @@ function previewFile(file) {
     imageDisplay.classList.remove("loading");
 
     displayImage(reader.result, "image-display");
-    let ImgSrc = imageDisplayOutput.src
-    imageDisplayOutput.src = ImgSrc.replace("input", "output");
-    show(imageDisplayOutput);
   };
 }
 
@@ -125,7 +120,6 @@ function predictImage(image) {
       window.alert("Oops! Something went wrong.");
     });
 }
-
 
 function displayImage(image, id) {
   // display image on given id <img> element

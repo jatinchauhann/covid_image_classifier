@@ -52,12 +52,13 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     pred_value = model_load.predict(test_generator, verbose=1)
 
-    """
+    status = ""
     if pred_value.argmax(axis =1)[0] == 0:
-        print("COVID")
+        status = "COVID"
     else:
-        print("NON-COVID") 
+        status = "NON-COVID"
 
+    """
     print(pred_value)
     print(pred_value.max(axis =1))
 
@@ -111,4 +112,4 @@ def function_pred_grad_cam(IMAGE_PATH):
     # plt.show()
     plt.savefig('static/uploads/output.png')
 
-    return "DONE"
+    return status

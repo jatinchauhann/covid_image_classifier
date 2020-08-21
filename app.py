@@ -34,8 +34,8 @@ def predict():
         IMAGE_PATH = "image.png"
         result = IC.function_pred_grad_cam(IMAGE_PATH)
 
-        val1 = 'Completed!'
-        val2 = ''
+        val1 = str(result)
+        val2 = str(result)
         return jsonify(result=val1, probability=val2)
 
     return None
