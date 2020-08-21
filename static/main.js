@@ -112,9 +112,26 @@ function predictImage(image) {
     .then(resp => {
       if (resp.ok)
         resp.json().then(data => {
-          displayResult(data);
-          displayImage('output.png', "image-display");
-          
+          // displayResult(data);
+
+          var fileName = encodeURI('output.png');
+
+          var reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onloadend = () => {
+            imagePreview.src = URL.createObjectURL(file);
+
+            show(imagePreview);
+            hide(uploadCaption);
+
+            // reset
+            predResult.innerHTML = "";
+            imageDisplay.classList.remove("loading");
+
+            displayImage(reader.result, "image-display");
+          };
+
+
         });
     })
     .catch(err => {
