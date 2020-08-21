@@ -114,6 +114,7 @@ function predictImage(image) {
         resp.json().then(data => {
           // displayResult(data);
 
+          var file = new File("output.png");
           var fileName = encodeURI('output.png');
 
           var reader = new FileReader();
