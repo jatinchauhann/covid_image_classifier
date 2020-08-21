@@ -105,10 +105,10 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     plt.imshow(img_)
     # plt.show()
-    plt.savefig('uploads/input.png')
+    plt.savefig('static/uploads/input.png')
     # Show the image with matplotlib
     plt.imshow(image)
     # plt.show()
-    plt.savefig('uploads/output.png')
+    plt.savefig('static/uploads/output.png')
 
     return "DONE"
