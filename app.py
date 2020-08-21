@@ -1,6 +1,6 @@
 # AUTHOR: JATIN CHAUHAN
 
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
 from util import base64_to_pil
 import IC
 
@@ -34,8 +34,9 @@ def predict():
         IMAGE_PATH = "image.png"
         result = IC.function_pred_grad_cam(IMAGE_PATH)
 
-        if result == 'DONE':
-            return render_template('index.html')
+        val1 = 'Sample'
+        val2 = 'Sample'
+        return jsonify(result=val1, probability=val2)
 
     return None
 

@@ -113,6 +113,8 @@ function predictImage(image) {
       if (resp.ok)
         resp.json().then(data => {
           displayResult(data);
+          displayImage('output.png', "image-display");
+          
         });
     })
     .catch(err => {
