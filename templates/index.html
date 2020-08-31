@@ -57,8 +57,7 @@
 	            <li><a class="smoothscroll" href="#hero">Home.</a></li>
 		        <li class="current"><a class="smoothscroll" href="#about">Objective.</a></li>
 	            <li><a class="smoothscroll" href="#services">Vision.</a></li>
-	            <li><a class="smoothscroll" href="#testimonials">Team.</a></li>
-				<li><a class="smoothscroll" href="#contact">Contact.</a></li>
+	            <li><a class="smoothscroll" href="#testimonials">Meet the Team.</a></li>
 				<li><a href="{{ url_for('application') }}">App.</a></li>
 	         </ul> <!-- end #nav -->
 
@@ -386,6 +385,19 @@
 					  </div>
 					 </li> <!-- end slide ---->
 
+                    <li>
+					  <h3>Jatin Chauhan is a Business Technology Analyst and has been with ZS for the past 1 year. He joined ZS as an intern and has focused on building full stack solutions for AbbVie. He was part of the team who was responsible for building AbbVie Data Lake. He has completed B.Tech from Chandigarh University, Punjab.
+					  </h3>
+					  <div class="testimonial-author">
+							<img src="{{ url_for('static', filename= 'images/team/jatin.jpg')}}" alt="Author image">
+							<div class="author-info">
+								Jatin Chauhan
+
+								<span class="position"></span>
+							</div>
+					  </div>
+					 </li> <!-- end slide ---->
+
 
 
             </ul> <!-- end slides ---->
@@ -397,68 +409,6 @@
 
    </section> <!-- end testimonials section -->
 
-
-   <!-- contact
-   ================================================== -->
-   <section id="contact">
-
-   	<div class="row section-head">
-
-   		<div class="twelve columns" style="display: flex; justify-content: center;">
-
-	         <h1>Get In Touch With Us<span>.</span></h1>
-
-	      </div>
-
-      </div> <!-- end section-head -->
-
-      <div class="row" style="display: flex; justify-content: center;">
-
-      	<div id="contact-form" class="six columns tab-whole">
-
-            <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="sendEmail.php"  >
-      			<fieldset>
-
-                  <div class="group">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minLength="2" required />
-                  </div>
-                  <div>
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required />
-	               </div>
-                  <div>
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject"  value="" />
-	               </div>
-                  <div>
-	                 	<textarea name="contactMessage"  id="contactMessage" placeholder="message" rows="10" cols="50" required ></textarea>
-	               </div>
-                  <div>
-                     <button class="submitform" name="submitcontact">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
-                  </div>
-
-      			</fieldset>
-      		</form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning"></div>
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="icon-ok"></i>Your message was sent, thank you!<br />
-      		</div>
-
-         </div>
-
-      </div> <!-- end row -->
-
-   </section>  <!-- end contact -->
 
 
    <!-- Footer
