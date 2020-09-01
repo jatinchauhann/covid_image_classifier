@@ -71,16 +71,16 @@ def application():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            FILENAMEINPUT = 'input.' + filename.rsplit('.', 1)[1]
+            # FILENAMEINPUT = 'input.' + filename.rsplit('.', 1)[1]
+            FILENAMEINPUT = 'input.' + 'png'
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], FILENAMEINPUT))
         # ADD THE CODE HERE TO RUN THE MODEL
 
-        IMAGE_PATH = FILENAMEINPUT
+        IMAGE_PATH = 'input.' + 'png'
         result = ""
         result = IC.function_pred_grad_cam(IMAGE_PATH)
 
         return render_template('appoutput.html')
-
 
     return render_template('app.html')
 
