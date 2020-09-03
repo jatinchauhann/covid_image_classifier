@@ -79,11 +79,12 @@ def application():
 
         IMAGE_PATH = 'input.' + 'png'
         result = "COVID Negative"
-        probability = str("20%")
+        probability = str("[[0.0072]]")
+
         result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
         probability = str(probability)
 
-        input_file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'input.png')
+        input_file_path = 'uploads/input.png'
         output_file_path = 'uploads/output.png'
 
         return render_template('appoutput.html', result=result, probability=probability,
