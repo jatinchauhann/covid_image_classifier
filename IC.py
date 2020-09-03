@@ -64,7 +64,10 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     """
     prediction_probability = pred_value[0][0] * 100
-    prediction_probability = str(prediction_probability)[:3] + ' %'
+    try:
+        prediction_probability = str(prediction_probability).split('.')[0] + ' %'
+    except:
+        prediction_probability = str(prediction_probability) + ' %'
 
 
     ### ---------- ### -----------#### ---------
