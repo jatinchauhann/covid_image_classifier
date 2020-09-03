@@ -77,10 +77,12 @@ def application():
         # ADD THE CODE HERE TO RUN THE MODEL
 
         IMAGE_PATH = 'input.' + 'png'
-        result = ""
-        result = IC.function_pred_grad_cam(IMAGE_PATH)
+        result = "COVID Negative"
+        probability = str("20%")
+        result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
+        probability = str(probability)
 
-        return render_template('appoutput.html')
+        return render_template('appoutput.html', result=result, probability=probability)
 
     return render_template('app.html')
 
@@ -112,4 +114,4 @@ def predict():
 
 if __name__ == '__main__':
     #TODO Remove the debug statement before puching it to production
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

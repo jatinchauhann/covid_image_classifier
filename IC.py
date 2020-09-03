@@ -54,15 +54,20 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     status = ""
     if pred_value.argmax(axis =1)[0] == 0:
-        status = "COVID"
+        status = "COVID Positive"
     else:
-        status = "NON-COVID"
+        status = "COVID Negative"
 
     """
     print(pred_value)
     print(pred_value.max(axis =1))
 
     """
+    try:
+        prediction_probability = pred_value.max(axis=1).values[0][0]
+    except:
+        prediction_probability = pred_value
+
     ### ---------- ### -----------#### ---------
 
     LAYER_NAME = 'top_conv'
@@ -112,4 +117,4 @@ def function_pred_grad_cam(IMAGE_PATH):
     # plt.show()
     plt.savefig('static/uploads/output.png')
 
-    return status
+    return status, prediction_probability

@@ -99,9 +99,18 @@
            <button class="submitform" name="file">Upload Image</button>
             <button class="submitform" name="submit">Run Model</button>
         -->
+
+           <hr />
            <form method=post enctype=multipart/form-data>
-          <input class="submitform" type=file name=file>
-          <input class="submitform" type=submit value=Run>
+               <div>
+                   <label for="files" class="btn submitform">Select CT Scan Image</label>
+                   <input class="submitform" type=file name=file style="visibility:hidden;" id="files">
+               </div>
+
+               <div>
+                   <label for="runmodel" class="btn submitform">Run Model</label>
+                   <input class="submitform" type=submit style="visibility:hidden;" id="runmodel">
+               </div>
 
         </form>
 
