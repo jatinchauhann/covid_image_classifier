@@ -15,6 +15,7 @@ FILENAMEINPUT = ''
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = b'classifier'
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
 
 def allowed_file(filename):
@@ -82,7 +83,7 @@ def application():
         result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
         probability = str(probability)
 
-        input_file_path = 'uploads/input.png'
+        input_file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'input.png')
         output_file_path = 'uploads/output.png'
 
         return render_template('appoutput.html', result=result, probability=probability,
