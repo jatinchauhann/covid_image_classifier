@@ -82,7 +82,11 @@ def application():
         result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
         probability = str(probability)
 
-        return render_template('appoutput.html', result=result, probability=probability)
+        input_file_path = 'uploads/input.png'
+        output_file_path = 'uploads/output.png'
+
+        return render_template('appoutput.html', result=result, probability=probability,
+                               input_file_path=input_file_path, output_file_path=output_file_path)
 
     return render_template('app.html')
 
