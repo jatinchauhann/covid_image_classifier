@@ -63,10 +63,9 @@ def function_pred_grad_cam(IMAGE_PATH):
     print(pred_value.max(axis =1))
 
     """
-    try:
-        prediction_probability = pred_value.max(axis=1).values[0][0]
-    except:
-        prediction_probability = pred_value
+    prediction_probability = pred_value[0][0] * 100
+    prediction_probability = str(prediction_probability)[:3] + ' %'
+
 
     ### ---------- ### -----------#### ---------
 
