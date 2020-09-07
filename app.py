@@ -1,4 +1,5 @@
 # AUTHOR: JATIN CHAUHAN
+# VERSION: 1 Beta
 
 import os
 from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
