@@ -80,7 +80,7 @@ def application():
 
         IMAGE_PATH = 'input.' + 'png'
         result = "COVID Negative"
-        probability = str("[[0.0072]]")
+        probability = str("30.0%")
 
         result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
         probability = str(probability)
@@ -121,4 +121,4 @@ def predict():
 
 if __name__ == '__main__':
     #TODO Remove the debug statement before puching it to production
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
