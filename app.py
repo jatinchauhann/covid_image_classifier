@@ -5,7 +5,7 @@ import os
 from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
 from util import base64_to_pil
 from werkzeug.utils import secure_filename
-import IC
+# import IC
 
 
 UPLOAD_FOLDER = ''
@@ -82,7 +82,7 @@ def application():
         result = "COVID Negative"
         probability = str("30.0%")
 
-        result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
+        # result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
         probability = str(probability)
 
         input_file_path = 'uploads/input.png'
@@ -121,4 +121,4 @@ def predict():
 
 if __name__ == '__main__':
     #TODO Remove the debug statement before puching it to production
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

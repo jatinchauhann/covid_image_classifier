@@ -92,7 +92,23 @@
 
    <div class="row">
 
-       <div class="six columns tab-whole left">
+      <div class="six columns tab-whole left">
+        <h2 align="right">Upload CT Scan below</h2>
+            <br>
+          <form method=post enctype=multipart/form-data>
+               <div>
+                   <label for="files" class="btn submitform" id="input-image-status">Select CT Scan Image</label>
+                   <input class="submitform" type=file name=file style="visibility:hidden;" id="files" onchange="document.getElementById('input-image-click').innerHTML = 'Run Model Now'; document.getElementById('input-image-status').innerHTML = 'CT Scan Image Uploaded'">
+               </div>
+               <div>
+                   <label for="runmodel" class="btn submitform" id="input-image-click"></label>
+                   <input class="submitform" type="submit" style="visibility:hidden;" id="runmodel">
+               </div>
+
+        </form>
+
+      </div>
+       <div class="six columns tab-whole right">
 
         <img id="input-image" src="{{ url_for('static', filename='images/main-title.png') }}" alt="" width="100%">
            <!--
@@ -101,74 +117,6 @@
         -->
 
            <hr />
-           <form method=post enctype=multipart/form-data>
-               <div>
-                   <label for="files" class="btn submitform">Select CT Scan Image</label>
-                   <input class="submitform" type=file name=file style="visibility:hidden;" id="files">
-               </div>
-
-               <div>
-                   <label for="runmodel" class="btn submitform">Run Model</label>
-                   <input class="submitform" type=submit style="visibility:hidden;" id="runmodel">
-               </div>
-
-        </form>
-
-      </div>
-
-      <div class="six columns tab-whole right">
-        <h2>Comparison of ZS Model with Radiologists' Benchmarks</h2>
-
-          <table style="border: 1px solid white">
-              <tr>
-                  <th></th>
-                  <th>Sensitivity</th>
-                  <th>Specificity</th>
-                  <th>Accuracy</th>
-              </tr>
-              <tr>
-                  <td>Radiologist #1</td>
-                  <td>72%</td>
-                  <td>94%</td>
-                  <td>83%</td>
-              </tr>
-              <tr>
-                  <td>Radiologist #2</td>
-                  <td>72%</td>
-                  <td>88%</td>
-                  <td>80%</td>
-              </tr>
-              <tr>
-                  <td>Radiologist #3</td>
-                  <td>94%</td>
-                  <td>24%</td>
-                  <td>60%</td>
-              </tr>
-              <tr>
-                  <td>Radiologist #4</td>
-                  <td>93%</td>
-                  <td>100%</td>
-                  <td>97%</td>
-              </tr>
-              <tr>
-                  <td>Radiologist #5</td>
-                  <td>83%</td>
-                  <td>93%</td>
-                  <td>88%</td>
-              </tr>
-              <tr>
-                  <td>Radiologist #6</td>
-                  <td>73%</td>
-                  <td>92%</td>
-                  <td>83%</td>
-              </tr>
-              <tr id="totals">
-                  <td>ZS Model</td>
-                  <td>87.75%</td>
-                  <td>87.62%</td>
-                  <td>87.68%</td>
-              </tr>
-          </table>
 
       </div>
 

@@ -91,10 +91,10 @@
 
         <div class="twelve columns">
 
-          <h1>COVID Image Classifier<span>.</span></h1>
+          <h1>COVID Image Classifier<span></span></h1>
 
           <hr />
-
+            <h2>Model Prediction: <span>{{ result }}</span></h2>
        </div>
 
    </div> <!-- end section-head -->
@@ -102,23 +102,91 @@
    <div class="row">
 
        <div class="six columns tab-whole left">
-        <h1>Uploaded CT Scan Image<span>.</span></h1> <br>
+        <h4>Uploaded CT Scan Image<span>.</span></h4>
            <div class="">
                 <img id="input-image" src="{{ url_for('static', filename=input_file_path)}}" alt="" width="100%">
            </div>
-           <h2>Model Prediction: <span>{{ result }}</span></h2>
-           <h2>Probability: <span>{{ probability }}</span></h2>
 
       </div>
 
       <div class="six columns tab-whole right">
-          <h1>Regions Influencing Model's Decision<span>.</span></h1>
+          <h4>Grad CAM - Regions Influencing Model's Decision<span>.</span></h4>
           <div class="">
                 <img id="input-image" src="{{ url_for('static', filename=output_file_path)}}" alt="" width="100%">
           </div>
       </div>
 
    </div> <!-- end row -->
+
+
+       <div class="row">
+
+           <div class="six columns tab-whole left">
+        <h2>Comparison of ZS Model with Radiologists' Benchmarks</h2>
+
+          <table style="border: 1px solid white">
+              <tr>
+                  <th></th>
+                  <th>Sensitivity</th>
+                  <th>Specificity</th>
+                  <th>Accuracy</th>
+              </tr>
+              <tr>
+                  <td>Radiologist #1</td>
+                  <td>72%</td>
+                  <td>94%</td>
+                  <td>83%</td>
+              </tr>
+              <tr>
+                  <td>Radiologist #2</td>
+                  <td>72%</td>
+                  <td>88%</td>
+                  <td>80%</td>
+              </tr>
+              <tr>
+                  <td>Radiologist #3</td>
+                  <td>94%</td>
+                  <td>24%</td>
+                  <td>60%</td>
+              </tr>
+              <tr>
+                  <td>Radiologist #4</td>
+                  <td>93%</td>
+                  <td>100%</td>
+                  <td>97%</td>
+              </tr>
+              <tr>
+                  <td>Radiologist #5</td>
+                  <td>83%</td>
+                  <td>93%</td>
+                  <td>88%</td>
+              </tr>
+              <tr>
+                  <td>Radiologist #6</td>
+                  <td>73%</td>
+                  <td>92%</td>
+                  <td>83%</td>
+              </tr>
+              <tr id="totals">
+                  <td>ZS Model</td>
+                  <td>87.75%</td>
+                  <td>87.62%</td>
+                  <td>87.68%</td>
+              </tr>
+          </table>
+
+      </div>
+           <div class="six columns tab-whole right">
+               <p><i><b>**(Grad-CAM) Gradient-weighted Class Activation Mapping</b>, uses the class-specific gradient information flowing into the final convolutional layer of a CNN to produce a coarse localization map of the important regions in the image.</i></p>
+               <h2>Summary & Performance</h2>
+               <br>
+                <h3>Model Prediction: <span>{{ result }}</span></h3>
+                <h3>Probability: <span>{{ probability }}</span></h3>
+                <h3>Number of train images: <span>100</span></h3>
+                <h3>Number of test images: <span>100</span></h3>
+
+           </div>
+       </div>
 
 </section>  <!-- end contact -->
 
