@@ -121,4 +121,4 @@ def predict():
 
 if __name__ == '__main__':
     #TODO Remove the debug statement before puching it to production
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

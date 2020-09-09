@@ -113,6 +113,9 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     plt.imshow(img_)
     # plt.show()
+
+    plt.xlabel("Image Width (# of pixels)")
+    plt.ylabel("Image Height (# of pixels)")
     plt.subplots_adjust(bottom=0)
     plt.subplots_adjust(top=1)
     plt.subplots_adjust(right=1)
@@ -121,6 +124,8 @@ def function_pred_grad_cam(IMAGE_PATH):
     # Show the image with matplotlib
     plt.imshow(image)
     # plt.show()
+    plt.xlabel("Image Width (# of pixels)")
+    plt.ylabel("Image Height (# of pixels)")
     plt.subplots_adjust(bottom=0)
     plt.subplots_adjust(top=1)
     plt.subplots_adjust(right=1)

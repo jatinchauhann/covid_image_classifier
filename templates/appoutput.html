@@ -94,7 +94,62 @@
           <h1>COVID Image Classifier<span></span></h1>
 
           <hr />
-            <h2>Model Prediction: <span>{{ result }}</span></h2>
+
+       </div>
+
+   </div> <!-- end section-head -->
+    <div class="row">
+        <div class="six columns tab-whole left">
+            <h2>Uploaded CT Scan Image<span>.</span></h2>
+            <div class="">
+                <img id="input-image" src="{{ url_for('static', filename=input_file_path)}}" alt="" width="100%">
+           </div>
+
+        </div>
+        <div class="six columns tab-whole right">
+            <br><br>
+                <h1>Model Prediction: <br><span><u>{{ result }}</u></span></h1>
+            <br><br>
+
+        </div>
+    </div>
+
+
+        <div class="row section-head">
+        <div class="twelve columns">
+          <hr />
+       </div>
+   </div> <!-- end section-head -->
+
+
+       <div class="row">
+        <div class="six columns tab-whole left">
+          <div class="">
+                <img id="input-image" src="{{ url_for('static', filename=output_file_path)}}" alt="" width="100%">
+          </div>
+
+        </div>
+        <div class="six columns tab-whole right">
+            <h2>Grad CAM - Regions Influencing Model's Decision<span>.</span></h2>
+            <p>
+                <ul>
+                    <li>Grad-CAM makes CNN based models more transparent by visualizing the regions of input that are “important” for predictions from these models</li>
+                    <li>In Grad CAM we calculate the sensitivity of the final prediction score with the pixel intensity across the image to show how the image label will change based on local features</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+
+       <br><br>
+       <div class="row section-head">
+
+        <div class="twelve columns">
+
+          <h1>Specifics of Underlying Model<span></span></h1>
+
+          <hr />
+
        </div>
 
    </div> <!-- end section-head -->
@@ -102,29 +157,71 @@
    <div class="row">
 
        <div class="six columns tab-whole left">
-        <h4>Uploaded CT Scan Image<span>.</span></h4>
-           <div class="">
-                <img id="input-image" src="{{ url_for('static', filename=input_file_path)}}" alt="" width="100%">
-           </div>
 
+         <h4>Distribution of Dataset for Modelling</h4>
+          <table style="border: 1px solid white" width="100%">
+              <tr>
+                  <th>Data Split</th>
+                  <th>COVID</th>
+                  <th>NON-COVID</th>
+                  <th>Total</th>
+                  <th>Percentage</th>
+              </tr>
+              <tr>
+                  <td>Training Set</td>
+                  <td>191</td>
+                  <td>234</td>
+                  <td>425</td>
+                  <td>57%</td>
+              </tr>
+              <tr>
+                  <td>Validation Set</td>
+                  <td>60</td>
+                  <td>58</td>
+                  <td>118</td>
+                  <td>16%</td>
+              </tr>
+              <tr>
+                  <td>Test Set</td>
+                  <td>98</td>
+                  <td>105</td>
+                  <td>203</td>
+                  <td>27%</td>
+              </tr>
+              <tr id="totals">
+                  <td>Total</td>
+                  <td>349</td>
+                  <td>397</td>
+                  <td>746</td>
+                  <td>100%</td>
+              </tr>
+          </table>
+           <h4>Model Performance</h4>
+           <table style="border: 1px solid white" width="100%">
+                <tr>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F-1 Score</th>
+                    <th>AUC</th>
+                </tr>
+                <tr id="totals">
+                    <td>87.68%</td>
+                    <td>86.86%</td>
+                    <td>87.75%</td>
+                    <td>87.30%</td>
+                    <td>93.09%</td>
+                </tr>
+            </table>
+
+          <br>
       </div>
 
       <div class="six columns tab-whole right">
-          <h4>Grad CAM - Regions Influencing Model's Decision<span>.</span></h4>
-          <div class="">
-                <img id="input-image" src="{{ url_for('static', filename=output_file_path)}}" alt="" width="100%">
-          </div>
-      </div>
 
-   </div> <!-- end row -->
+          <h4>Comparison of ZS Model with Radiologists' Benchmarks</h4>
 
-
-       <div class="row">
-
-           <div class="six columns tab-whole left">
-        <h2>Comparison of ZS Model with Radiologists' Benchmarks</h2>
-
-          <table style="border: 1px solid white">
+          <table style="border: 1px solid white; line-height: 33px" width="100%">
               <tr>
                   <th></th>
                   <th>Sensitivity</th>
@@ -176,17 +273,9 @@
           </table>
 
       </div>
-           <div class="six columns tab-whole right">
-               <p><i><b>**(Grad-CAM) Gradient-weighted Class Activation Mapping</b>, uses the class-specific gradient information flowing into the final convolutional layer of a CNN to produce a coarse localization map of the important regions in the image.</i></p>
-               <h2>Summary & Performance</h2>
-               <br>
-                <h3>Model Prediction: <span>{{ result }}</span></h3>
-                <h3>Probability: <span>{{ probability }}</span></h3>
-                <h3>Number of train images: <span>100</span></h3>
-                <h3>Number of test images: <span>100</span></h3>
 
-           </div>
-       </div>
+   </div> <!-- end row -->
+
 
 </section>  <!-- end contact -->
 
