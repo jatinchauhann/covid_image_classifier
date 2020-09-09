@@ -39,7 +39,16 @@
               background-color: darkslategray;
               color: black;
             }
+        .cropped {
+            width: 360px; /* width of container */
+            height: 360px; /* height of container */
+            overflow: hidden;
+            border: 2px solid black;
+        }
 
+        .cropped img {
+            margin: -60px -0px -90px -150px;
+        }
     </style>
 
 </head>
@@ -66,8 +75,8 @@
          	</a>
 
 	         <ul id="nav" class="nav">
-	            <li><a  href="{{ url_for('index') }}">Home.</a></li>
-                 <li><a href="{{ url_for('application') }}">App.</a></li>
+	            <li><a  href="{{ url_for('index') }}">Home</a></li>
+                 <li><a href="{{ url_for('application') }}">App</a></li>
 	         </ul> <!-- end #nav -->
 
 	      </nav> <!-- end #nav-wrap -->
@@ -93,17 +102,20 @@
    <div class="row">
 
        <div class="six columns tab-whole left">
-        <h1>Your CT Scan Image<span>.</span></h1> <br>
-        <img id="input-image" src="{{ url_for('static', filename=input_file_path)}}" alt="" width="100%">
-           <h2>Class: <span>{{ result }}</span></h2>
+        <h1>Uploaded CT Scan Image<span>.</span></h1> <br>
+           <div class="">
+                <img id="input-image" src="{{ url_for('static', filename=input_file_path)}}" alt="" width="100%">
+           </div>
+           <h2>Model Prediction: <span>{{ result }}</span></h2>
            <h2>Probability: <span>{{ probability }}</span></h2>
 
       </div>
 
       <div class="six columns tab-whole right">
           <h1>Regions Influencing Model's Decision<span>.</span></h1>
-        <img id="input-image" src="{{ url_for('static', filename=output_file_path)}}" alt="" width="100%">
-
+          <div class="">
+                <img id="input-image" src="{{ url_for('static', filename=output_file_path)}}" alt="" width="100%">
+          </div>
       </div>
 
    </div> <!-- end row -->

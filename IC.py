@@ -113,10 +113,18 @@ def function_pred_grad_cam(IMAGE_PATH):
 
     plt.imshow(img_)
     # plt.show()
-    plt.savefig('static/uploads/input.png')
+    plt.subplots_adjust(bottom=0)
+    plt.subplots_adjust(top=1)
+    plt.subplots_adjust(right=1)
+    plt.subplots_adjust(left=0)
+    plt.savefig('static/uploads/input.png', bbox_inches='tight', pad_inches=0)
     # Show the image with matplotlib
     plt.imshow(image)
     # plt.show()
-    plt.savefig('static/uploads/output.png')
+    plt.subplots_adjust(bottom=0)
+    plt.subplots_adjust(top=1)
+    plt.subplots_adjust(right=1)
+    plt.subplots_adjust(left=0)
+    plt.savefig('static/uploads/output.png', bbox_inches='tight', pad_inches=0)
 
     return status, prediction_probability
