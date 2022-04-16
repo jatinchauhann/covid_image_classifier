@@ -55,7 +55,8 @@ def upload_file():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return render_template('index.html')
+    return redirect(url_for('application'))
 
 
 @app.route('/app', methods=['GET', 'POST'])
@@ -79,10 +80,12 @@ def application():
         # ADD THE CODE HERE TO RUN THE MODEL
 
         IMAGE_PATH = 'input.' + 'png'
-        result = "COVID Negative"
-        probability = str("30.0%")
+        
+        # FOR TESTING WITHOUT MODEL, UNCOMMENT
+        # result = "COVID Negative"
+        # probability = str("30.0%")
 
-        result, probability = IC.function_pred_grad_cam(IMAGE_PATH)
+        result, probability = IC.function_pred_grad_cam(IMAGE_PATH) 
         probability = str(probability)
 
         input_file_path = 'uploads/input.png'
